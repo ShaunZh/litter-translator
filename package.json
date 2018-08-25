@@ -1,0 +1,22 @@
+{
+  "name": "litter-translator",
+  "version": "1.0.3",
+  "description": "litter translator",
+  "main": "translator.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/ShaunZh/litter-translator.git"
+  },
+  "keywords": [
+    "translator"
+  ],
+  "author": "hexon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ShaunZh/litter-translator/issues"
+  },
+  "homepage": "https://github.com/ShaunZh/litter-translator#readme"
+}
