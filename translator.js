@@ -26,6 +26,9 @@ axios.get(API, data)
     let webResult = [];
     let phonetic = {};
     simpleResult = response.data.translation;
+    if (response.data.basic === undefined) {
+      throw new Error('无法找到相关解释')
+    }
     if (response.data.basic.explains.length) {
       basicResult = response.data.basic.explains;
     }
@@ -40,10 +43,9 @@ axios.get(API, data)
     }
     // 输出表格
     let table = new Table()
-    table.push(['美式发音', phonetic['us-phonetic']]);
-    table.push(['英式发音', phonetic['uk-phonetic']]);
+    console.log(`us-(${phonetic['us-phonetic']}), uk-(${phonetic['uk-phonetic']})`  + '\n')
+    console.log(basicResult.join(','));
     table.push(['基本释义', simpleResult.join(',')]);
-    table.push(['详细释义', basicResult.join(',')]);
     for (var i = 0; i < webResult.length && i < 3; i++) {
       table.push([`'${webResult[i].key}'`,  webResult[i].value.join(', ')]);
     }
